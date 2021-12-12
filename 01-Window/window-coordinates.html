@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Window Coordinates</title>
+    <style>
+      * {
+        margin: 0;
+        box-sizing: border-box;
+      }
+
+      html {
+        width: 100%;
+        height: 100%;
+        background-color: #02343f;
+      }
+
+      body {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        margin: 0 auto;
+      }
+
+      body::after {
+        content: '@yejinc';
+        display: block;
+        font-family: 'Courier New', Courier, monospace;
+        margin: 50px 0;
+        font-size: 12px;
+        font-weight: 600;
+        color: #e4f0ff;
+      }
+
+      .visually-hidden {
+        position: absolute !important;
+        width: 1px !important;
+        height: 1px !important;
+        padding: 0 !important;
+        margin: -1px !important;
+        overflow: hidden !important;
+        clip: rect(0, 0, 0, 0) !important;
+        white-space: nowrap !important;
+        border: 0 !important;
+      }
+
+      .box-group {
+        padding-top: 50px;
+      }
+
+      .box,
+      .selected-box {
+        margin-bottom: 24px;
+        width: 180px;
+        height: 180px;
+      }
+      .box {
+        background-color: #005c60;
+      }
+
+      .box:last-child {
+        margin-bottom: 0;
+      }
+
+      .selected-box {
+        background-color: #f0edcc;
+      }
+
+      .selected-box:hover {
+        animation-name: wiggle;
+        animation-duration: 700ms;
+        animation-delay: 500ms;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+      }
+
+      @keyframes wiggle {
+        from {
+          transform: rotate(-15deg);
+        }
+        to {
+          transform: rotate(15deg);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <section class="box-group">
+      <h1 class="visually-hidden">Title</h1>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="selected-box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+    </section>
+  </body>
+  <script>
+    const
+  </script>
+</html>
