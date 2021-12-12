@@ -42,6 +42,18 @@
         font-weight: 600;
       }
 
+      .visually-hidden {
+        position: absolute !important;
+        width: 1px !important;
+        height: 1px !important;
+        padding: 0 !important;
+        margin: -1px !important;
+        overflow: hidden !important;
+        clip: rect(0, 0, 0, 0) !important;
+        white-space: nowrap !important;
+        border: 0 !important;
+      }
+
       .dashboard {
         display: flex;
         justify-content: center;
@@ -76,6 +88,7 @@
   </head>
   <body>
     <section class="dashboard">
+      <h1 class="visually-hidden">Dashboard</h1>
       <div class="dashboard-left">Title</div>
       <div class="dashboard-middle">Arrow</div>
       <div class="dashboard-right">Result</div>
