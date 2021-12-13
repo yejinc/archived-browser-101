@@ -112,6 +112,35 @@
       .selected-box-text {
         color: #334a52;
       }
+
+      .button-group {
+        position: sticky;
+        top: 50px;
+        display: flex;
+        flex-direction: column;
+        justify-items: flex-start;
+        align-items: flex-start;
+      }
+
+      .scroll-button {
+        margin-bottom: 24px;
+        padding: 0 8px;
+        height: 40px;
+        width: auto;
+        border: 0;
+        border-radius: 4px;
+        outline: none;
+        cursor: pointer;
+        background-color: #96afb8;
+      }
+
+      .scroll-button:last-child {
+        margin-bottom: 0;
+      }
+
+      .scroll-button:hover {
+        opacity: 0.4;
+      }
     </style>
   </head>
   <body>
@@ -135,15 +164,69 @@
         <div class="box"></div>
         <div class="box"></div>
       </section>
+
+      <section class="button-group">
+        <h1 class="visually-hidden">Buttons</h1>
+        <button type="button" class="scroll-button by-position">
+          📏 Scroll down by 100px
+        </button>
+        <button type="button" class="scroll-button to-position">
+          🔖 Scroll down to 100px
+        </button>
+        <button type="button" class="scroll-button to-selected">
+          🟨 Scroll down to selected box
+        </button>
+        <button type="button" class="scroll-button to-up">
+          🔝 Scroll up to top
+        </button>
+      </section>
     </main>
   </body>
   <script>
+    // console-logging client and page position
     const selected = document.querySelector('.selected-box')
 
     selected.addEventListener('click', (event) => {
       console.log(selected.getBoundingClientRect())
       console.log(`client: ${event.clientX}, ${event.clientY}`)
       console.log(`page: ${event.pageX}, ${event.pageY}`)
+    })
+
+    // buttons that can scroll down to certain position
+
+    const byPos = document.querySelector('.by-position')
+    const toPos = document.querySelector('.to-position')
+    const toSelected = document.querySelector('.to-selected')
+    const toUp = document.querySelector('.to-up')
+
+    byPos.addEventListener('click', () => {
+      window.scrollBy({
+        top: 100,
+        left: 0,
+        behavior: 'smooth',
+      })
+    })
+
+    toPos.addEventListener('click', () => {
+      window.scrollTo({
+        top: 100,
+        left: 0,
+        behavior: 'smooth',
+      })
+
+      toSelected.addEventListener('click', () => {
+        selected.scrollIntoView({
+          behavior: 'smooth',
+        })
+      })
+    })
+
+    toUp.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: 'smooth',
+      })
     })
   </script>
 </html>
