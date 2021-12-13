@@ -14,6 +14,11 @@
       html {
         width: 100%;
         height: 100%;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+          Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-size: 16px;
+        line-height: 1.5;
+        color: #f1f1e6;
         background-color: #02343f;
       }
 
@@ -22,12 +27,15 @@
         flex-direction: column;
         justify-content: flex-start;
         align-items: center;
-        margin: 0 auto;
+        margin: 50px auto;
       }
 
       body::after {
         content: '@yejinc';
-        display: block;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
         font-family: 'Courier New', Courier, monospace;
         margin: 50px 0;
         font-size: 12px;
@@ -47,8 +55,19 @@
         border: 0 !important;
       }
 
+      .contents {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: flex-start;
+      }
+
       .box-group {
-        padding-top: 50px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        margin-right: 50px;
       }
 
       .box,
@@ -66,7 +85,11 @@
       }
 
       .selected-box {
-        background-color: #f0edcc;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 24px;
+        background-color: #f9f871;
       }
 
       .selected-box:hover {
@@ -85,26 +108,42 @@
           transform: rotate(15deg);
         }
       }
+
+      .selected-box-text {
+        color: #334a52;
+      }
     </style>
   </head>
   <body>
-    <section class="box-group">
-      <h1 class="visually-hidden">Title</h1>
-      <div class="box"></div>
-      <div class="box"></div>
-      <div class="box"></div>
-      <div class="box"></div>
-      <div class="box"></div>
-      <div class="box"></div>
-      <div class="selected-box"></div>
-      <div class="box"></div>
-      <div class="box"></div>
-      <div class="box"></div>
-      <div class="box"></div>
-      <div class="box"></div>
-    </section>
+    <main class="contents">
+      <section class="box-group">
+        <h1 class="visually-hidden">Title</h1>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="selected-box">
+          <p class="selected-box-text">
+            👉 click me <br />and checkout the console 👀
+          </p>
+        </div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+      </section>
+    </main>
   </body>
   <script>
-    const
+    const selected = document.querySelector('.selected-box')
+
+    selected.addEventListener('click', (event) => {
+      console.log(selected.getBoundingClientRect())
+      console.log(`client: ${event.clientX}, ${event.clientY}`)
+      console.log(`page: ${event.pageX}, ${event.pageY}`)
+    })
   </script>
 </html>
