@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Window Coordinates</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./app.js" />
+  </head>
+  <body>
+    <main class="contents">
+      <section class="box-group">
+        <h1 class="visually-hidden">Title</h1>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="selected-box">
+          <p class="selected-box-text">
+            👉 click me <br />and checkout the console 👀
+          </p>
+        </div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+      </section>
+
+      <section class="button-group">
+        <h1 class="visually-hidden">Buttons</h1>
+        <button type="button" class="scroll-button by-position">
+          📏 Scroll down by 100px
+        </button>
+        <button type="button" class="scroll-button to-position">
+          🔖 Scroll down to 100px
+        </button>
+        <button type="button" class="scroll-button to-selected">
+          🟨 Scroll down to selected box
+        </button>
+        <button type="button" class="scroll-button to-up">
+          🔝 Scroll up to top
+        </button>
+      </section>
+    </main>
+  </body>
+</html>
