@@ -1,3 +1,5 @@
+'use strict'
+
 const dashboard = document.querySelector('.dashboard')
 const dashboardLeft = document.querySelector('.dashboard-left')
 const dashboardRight = document.querySelector('.dashboard-right')
